@@ -1,10 +1,18 @@
-import './App.css';
-import Home from './components/Home';
+import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./components/Home";
+import SingleMovie from "./components/SingleMovie";
 
 function App() {
   return (
-    <div className="App">
-      <Home />
+    <div>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={ <Home /> } />
+          <Route path="/movie/:id" element={ <SingleMovie /> } />
+          <Route path="*" element={ <Home /> } />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
