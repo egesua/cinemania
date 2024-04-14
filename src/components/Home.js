@@ -1,11 +1,17 @@
-import React from 'react'
+import React, { useContext } from "react";
+import { AppContext } from "../context";
 
 const Home = () => {
-  return (
-    <div>
-      Home
-    </div>
-  )
-}
+  const name = useContext(AppContext);
 
-export default Home
+  //TODO globalcontext kullanarak dene.
+
+  return (
+    <>
+      <div>Home</div>
+      <p>{name}</p>
+    </>
+  );
+};
+
+export default Home;
